@@ -1,0 +1,17 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Liste des jeux Kirby</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-text-center">
+    <ion-grid>
+        <ion-row>
+            <ion-col size="4" *ngFor="let kirby of kirbys;">
+                <ion-card [routerLink]="['/tab/kirbys', kirby.id]">
+                    <ion-img [src]="kirby.imgLink" [alt]="kirby.nom_jeu"></ion-img>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

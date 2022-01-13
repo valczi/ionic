@@ -1,0 +1,28 @@
+ion-title {
+    font-family: sans wf, sans-serif;
+    font-weight: 900;
+    color: #335C67;
+    font-style: italic;
+}
+
+ion-toolbar {
+    --background: #EAB464;
+}
+
+ion-header {
+    margin-bottom: 10%;
+}
+
+ion-button {
+    font-family: Georgia, serif;
+    font-weight: 900;
+    font-size: 14px;
+}
+
+.update {
+    --background: #7CC6FE;
+}
+
+.delete {
+    --background: #FF6666;
+}

@@ -1,0 +1,74 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/tab/kirbys"></ion-back-button>
+        </ion-buttons>
+        <ion-title *ngIf="kirby">{{kirby.nom_jeu}}</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+    <div *ngIf="!update">
+        <ion-card *ngIf="kirby">
+            <ion-img [src]="kirby.imgLink"></ion-img>
+            <ion-card-header>
+                <ion-card-title>{{kirby.nom_jeu}}</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+                <ion-item>
+                    {{kirby.resume}}
+                </ion-item>
+                <ion-label> Developper : </ion-label>
+                <ion-item>
+                    {{kirby.developper}}
+                </ion-item>
+                <ion-label> Producteur : </ion-label>
+                <ion-item>
+                    {{kirby.producter}}
+                </ion-item>
+                <ion-label> Année de sortie : </ion-label>
+                <ion-item>
+                    {{kirby.year}}
+                </ion-item>
+
+            </ion-card-content>
+        </ion-card>
+
+        <ion-col size="6" offset="3">
+            <ion-button class="update" (click)="setUpdate()">Modifier les informations</ion-button>
+        </ion-col>
+        <ion-col size="6" offset="3">
+            <ion-button class="delete" (click)="goDelete(kirby.id)">Supprimer le kirby</ion-button>
+        </ion-col>
+    </div>
+
+    <div *ngIf="update && kirby">
+        <ion-item>
+            <ion-label>Nom: </ion-label>
+            <ion-input type="text" [(ngModel)]="kirby.nom_jeu"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>Producteur: </ion-label>
+            <ion-input type="text" [(ngModel)]="kirby.producter"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>Image cadre : </ion-label>
+            <ion-input type="text" [(ngModel)]="kirby.imgLink"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>Année de sortie : </ion-label>
+            <ion-input type="text" [(ngModel)]="kirby.year"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>Description: </ion-label>
+            <ion-textarea type="textArea" [(ngModel)]="kirby.resume"></ion-textarea>
+        </ion-item>
+
+        <ion-col class="ion-margin-top" size="6" offset="3">
+            <ion-button color="dark" (click)="updateKirby()">Valider modifications</ion-button>
+        </ion-col>
+
+    </div>
+
+</ion-content>

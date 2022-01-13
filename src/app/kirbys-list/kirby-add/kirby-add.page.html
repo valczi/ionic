@@ -1,0 +1,37 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Ajouter un Kirby</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-item>
+        <ion-label>Nom: </ion-label>
+        <ion-input type="text" [(ngModel)]="kirb.nom_jeu"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label>Producteur: </ion-label>
+        <ion-input type="text" [(ngModel)]="kirb.producter"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label>developper: </ion-label>
+        <ion-input type="text" [(ngModel)]="kirb.developper"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label>Image : </ion-label>
+        <ion-input type="text" [(ngModel)]="kirb.imgLink"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label>Année de sortie : </ion-label>
+        <ion-input type="text" [(ngModel)]="kirb.year"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label>Description: </ion-label>
+        <ion-textarea type="textArea" [(ngModel)]="kirb.resume"></ion-textarea>
+    </ion-item>
+
+    <ion-col size="8" offset="4">
+        <ion-button class="ion-margin-top" (click)="addKirby()">Ajouter</ion-button>
+    </ion-col>
+
+</ion-content>
